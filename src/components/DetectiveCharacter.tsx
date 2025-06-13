@@ -13,7 +13,7 @@ const DetectiveCharacter: React.FC<DetectiveCharacterProps> = ({ wrongGuesses, m
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      <div className="relative w-42 h-52 bg-blue-100 rounded-lg border-2 border-blue-300 flex flex-col items-center justify-center">
+      <div className="relative w-56 h-52 bg-blue-100 rounded-lg border-2 border-blue-300 flex flex-col items-center justify-center">
         {/* Detective Character */}
         <div className="text-8xl">🕵️</div>
         
