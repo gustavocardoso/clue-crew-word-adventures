@@ -13,9 +13,9 @@ const DetectiveCharacter: React.FC<DetectiveCharacterProps> = ({ wrongGuesses, m
 
   return (
     <div className="flex flex-col items-center space-y-4">
-      <div className="relative w-32 h-40 bg-blue-100 rounded-lg border-2 border-blue-300 flex flex-col items-center justify-center">
+      <div className="relative w-42 h-52 bg-blue-100 rounded-lg border-2 border-blue-300 flex flex-col items-center justify-center">
         {/* Detective Character */}
-        <div className="text-6xl">🕵️</div>
+        <div className="text-8xl">🕵️</div>
         
         {/* Items that disappear with wrong guesses */}
         <div className="absolute -top-2 -right-2 space-y-1">
