@@ -33,41 +33,16 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Game Content */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Detective Character */}
-          <div className="flex justify-center">
-            <DetectiveCharacter 
-              wrongGuesses={wrongGuesses} 
-              maxWrongGuesses={maxWrongGuesses} 
-            />
-          </div>
-
-          {/* Game Info */}
-          <div className="space-y-6">
-            <GameStats mistakes={wrongGuesses} maxMistakes={maxWrongGuesses} />
-            
-            {/* Game Status */}
-            {isGameOver && (
-              <div className="text-center p-4 rounded-lg bg-white shadow-md">
-                {isGameWon ? (
-                  <div className="text-green-600">
-                    <div className="text-2xl mb-2">🎉 Case Solved! 🎉</div>
-                    <div className="text-lg">Great detective work!</div>
-                  </div>
-                ) : (
-                  <div className="text-red-600">
-                    <div className="text-2xl mb-2">🔍 Case Unsolved 🔍</div>
-                    <div className="text-lg">The word was: <strong>{currentWord.toUpperCase()}</strong></div>
-                  </div>
-                )}
-                <Button onClick={resetGame} className="mt-4" size="lg">
-                  New Case
-                </Button>
-              </div>
-            )}
-          </div>
+        {/* Detective Character - Centered */}
+        <div className="flex justify-center mb-8">
+          <DetectiveCharacter 
+            wrongGuesses={wrongGuesses} 
+            maxWrongGuesses={maxWrongGuesses} 
+          />
         </div>
+
+        {/* Game Stats */}
+        <GameStats mistakes={wrongGuesses} maxMistakes={maxWrongGuesses} />
 
         {/* Word Display */}
         <WordDisplay word={currentWord} guessedLetters={guessedLetters} />
@@ -80,13 +55,11 @@ const Index = () => {
         />
 
         {/* New Game Button */}
-        {!isGameOver && (
-          <div className="text-center mt-8">
-            <Button onClick={resetGame} variant="outline">
-              New Case
-            </Button>
-          </div>
-        )}
+        <div className="text-center mt-8">
+          <Button onClick={resetGame} variant="outline">
+            New Case
+          </Button>
+        </div>
       </div>
     </div>
   );
