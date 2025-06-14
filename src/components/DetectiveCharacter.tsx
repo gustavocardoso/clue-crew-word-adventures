@@ -12,9 +12,9 @@ const DetectiveCharacter: React.FC<DetectiveCharacterProps> = ({ wrongGuesses, m
   ];
 
   return (
-    <div className="flex items-center space-x-6">
+    <div className="flex items-start space-x-6">
       {/* Detective Character Box */}
-      <div className="relative w-56 h-52 bg-blue-100 rounded-lg border-2 border-blue-300 flex flex-col items-center justify-center">
+      <div className="relative w-56 h-80 bg-blue-100 rounded-lg border-2 border-blue-300 flex flex-col items-center justify-center">
         {/* Detective Character - Larger */}
         <div className="text-9xl">🕵️</div>
         
