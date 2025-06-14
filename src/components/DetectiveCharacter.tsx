@@ -12,28 +12,32 @@ const DetectiveCharacter: React.FC<DetectiveCharacterProps> = ({ wrongGuesses, m
   ];
 
   return (
-    <div className="flex flex-col items-center space-y-4">
+    <div className="flex items-center space-x-6">
+      {/* Detective Character Box */}
       <div className="relative w-56 h-52 bg-blue-100 rounded-lg border-2 border-blue-300 flex flex-col items-center justify-center">
-        {/* Detective Character */}
-        <div className="text-8xl">🕵️</div>
+        {/* Detective Character - Larger */}
+        <div className="text-9xl">🕵️</div>
         
-        {/* Items that disappear with wrong guesses */}
-        <div className="absolute -top-2 -right-2 space-y-1">
-          {items.slice(0, maxWrongGuesses - wrongGuesses).map((item, index) => (
-            <div key={item} className="text-xs bg-yellow-200 px-2 py-1 rounded shadow-sm">
+        <div className="text-sm text-muted-foreground mt-2">
+          Detective items remaining: {maxWrongGuesses - wrongGuesses}
+        </div>
+      </div>
+      
+      {/* Items positioned next to the detective box */}
+      <div className="flex flex-col space-y-2">
+        {items.slice(0, maxWrongGuesses - wrongGuesses).map((item, index) => (
+          <div key={item} className="text-sm bg-yellow-200 px-3 py-2 rounded-lg shadow-sm flex items-center space-x-2">
+            <span className="text-lg">
               {item === "Hat" && "🎩"}
               {item === "Magnifying Glass" && "🔍"}
               {item === "Badge" && "🏅"}
               {item === "Notebook" && "📓"}
               {item === "Pen" && "✒️"}
               {item === "Flashlight" && "🔦"}
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      <div className="text-sm text-muted-foreground">
-        Detective items remaining: {maxWrongGuesses - wrongGuesses}
+            </span>
+            <span className="font-medium">{item}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
